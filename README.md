@@ -15,4 +15,12 @@ python -m scripts.label_image \
   --input_height 160   \
   --input_width 160 
 
-
+./mobilenet_based_classifier.py  \
+  --model_path ~/AIY-projects-python/src/aiy/vision/models/retrained_graph.binaryproto \
+  --label_path ~/AIY-projects-python/src/aiy/vision/models/retrained_labels.txt \
+  --input_height 160   \
+  --input_width 160   \
+  --input_layer input   \
+  --output_layer final_result   \
+  --preview   \
+  --show_fps
