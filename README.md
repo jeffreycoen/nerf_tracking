@@ -17,7 +17,13 @@ python -m scripts.label_image \
 	--image=tf_files/test_images/IMG_0267.jpg
 
 
-# testing the retrained graph on the raspberry pi
+# compile that graph!
+./bonnet_model_compiler.par\
+  --frozen_graph_path=retrained_graph.pb\
+  --output_graph_path=retrained_graph.binaryproto\
+  --input_tensor_name=input\
+  --output_tensor_names=final_result\
+  --input_tensor_size=160 
 
 # On Pi
 ./test_run_model_on_bonnet.py  \
