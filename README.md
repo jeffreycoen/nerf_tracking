@@ -40,6 +40,6 @@ python -m scripts.label_image \
   --input_width 160   \
   --input_layer input   \
   --output_layer final_result   \
-  --threshold 0.6   \
+  --threshold 0.8   \
   --preview   \
   --show_fps
