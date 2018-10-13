@@ -26,7 +26,7 @@ from aiy.vision.inference import CameraInference
 from aiy.vision.models import face_detection
 from aiy.vision.annotator import Annotator
 from picamera import PiCamera
-from time import sleep
+
 
 def avg_joy_score(faces):
     if faces:
@@ -44,7 +44,7 @@ def main():
     # https://picamera.readthedocs.io/en/release-1.13/fov.html#sensor-modes
     # This is the resolution inference run on.
     with PiCamera(sensor_mode=4, resolution=(1640, 1232), framerate=30) as camera:
-        camera.start_preview()#fullscreen=False, window=(200, 200, 640, 480))
+        #camera.start_preview()#fullscreen=False, window=(200, 200, 640, 480))
 
         # Annotator renders in software so use a smaller size and scale results
         # for increased performace.
@@ -72,7 +72,7 @@ def main():
                 print('#%05d (%5.2f fps): num_faces=%d, avg_joy_score=%.2f' %
                     (inference.count, inference.rate, len(faces), avg_joy_score(faces)))
 
-        camera.stop_preview()
+        #camera.stop_preview()
 
 
 if __name__ == '__main__':
