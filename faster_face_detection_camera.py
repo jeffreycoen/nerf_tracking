@@ -44,13 +44,13 @@ def main():
     # https://picamera.readthedocs.io/en/release-1.13/fov.html#sensor-modes
     # This is the resolution inference run on.
     with PiCamera(sensor_mode=4, resolution=(1640, 1232), framerate=30) as camera:
-        #camera.start_preview()#fullscreen=False, window=(200, 200, 640, 480))
+        camera.start_preview(fullscreen=False, window=(0, 0, 1280, 720))
 
         # Annotator renders in software so use a smaller size and scale results
         # for increased performace.
-        annotator = Annotator(camera, dimensions=(320, 240))
-        scale_x = 320 / 1640
-        scale_y = 240 / 1232
+        annotator = Annotator(camera, dimensions=(160, 120))
+        scale_x = 160 / 1640
+        scale_y = 120 / 1232
 	#scale_x = 128 / 1640
         #scale_y = 128 / 1232
 
@@ -72,7 +72,7 @@ def main():
                 print('#%05d (%5.2f fps): num_faces=%d, avg_joy_score=%.2f' %
                     (inference.count, inference.rate, len(faces), avg_joy_score(faces)))
 
-        #camera.stop_preview()
+        camera.stop_preview()
 
 
 if __name__ == '__main__':
