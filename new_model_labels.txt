@@ -1,0 +1,5 @@
+clutter
+dog
+face
+nerf guns
+people
